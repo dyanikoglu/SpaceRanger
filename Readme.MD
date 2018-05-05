@@ -1,17 +1,23 @@
-Space Ranger by Doða Can YANIKOÐLU
------------------------------------------------------
+# Space Ranger
 
-Contents
---------
-i. Environment Setup
-ii. Extra Features
-iii. Game Rules
-iv. Controls
-v. Bugs & Known Issues
+A space ship battle game developed with pure OpenGL on C++.
 
 
-i. Environment Setup
---------------------
+## Contents
+
+I. Environment Setup
+
+II. Extra Features
+
+III. Game Rules
+
+IV. Controls
+
+V. Bugs & Known Issues
+
+
+I. Environment Setup
+---------------------
 -> Just launch project by opening "HW3.vcxproj". Project should be builded on x86 - Release mode. (It's important
 that project should be launched on "Release", code should be optimized for getting optimal performance)
 
@@ -19,7 +25,8 @@ that project should be launched on "Release", code should be optimized for getti
 
 -> If a standalone exe is needed: media folder, fmod.dll, and fmod64.dll should be on same directory with exe file.
 
-ii. Extra Features
+
+II. Features
 ------------------
 This game includes other NPC ships, procedurally created spiral shaped universe, and a blaster shooting minigame as extra features. 
 
@@ -50,7 +57,7 @@ Sound Effects:
 -> Explosion sound effects will play if player hits another ship with it's blaster
 -> Other sound effects for ambience and blaster shooting
 
-iii. Game Rules
+III. Game Rules
 -------------------
 -> If player hits to a NPC blaster, player's ship is destroyed
 -> If player hits to a planet or sun, player's ship is destroyed
@@ -59,7 +66,7 @@ iii. Game Rules
 -> Same rules are applicable for NPC ships.
 
 
-iv. Controls
+IV. Controls
 ------------
 z -> Stop each movement of ship
 a -> Increase linear velocity (keeping pressed down will continuously increase it)
@@ -75,9 +82,23 @@ Left Mouse Button -> (If paused) Continue game / Pause Game
 Right Mouse Button -> (If paused) Advance game by 1 frame / Pause Game
 
 
-v. Bugs & Known Issues
+V. Bugs & Known Issues
 -----------------------
 -> Hitting other ships with blaster is a bit hard due to sizes and speeds of NPC ships.
 -> Controls are a bit weird because of instructions in homework paper, rotating the ship can be hard.
 -> Rarely camera view can focus somewhere different than ship's destroyed parts when player's ship is destroyed
 -> Top view shows the ships very small, because of the sizes of planets.
+
+## Licence
+
+Copyright (C) 2017 DoÄŸa Can YANIKOÄžLU
+
+This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with this program. If not, see http://www.gnu.org/licenses/
+
+## Contributing
+
+Contributors are encouraged to fork this repository and issue pull requests.
