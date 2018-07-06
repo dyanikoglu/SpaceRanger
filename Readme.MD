@@ -11,11 +11,9 @@ A space ship battle game developed with pure OpenGL on C++.
 
 - It's assumed that OpenGL, FreeGLUT and Windows SDK 8.1 is already installed correctly on the system. This guide can be followed to get your dev. environment ready: http://www.cs.uky.edu/~cheng/cs633/OpenGLInstallGuideWindows.pdf
 
-- You should add .dll path manually into VS environment. To do that, go to Project Properties -> Configuration Properties -> Debugging -> Environment and set it to PATH=%PATH%;$(ProjectDir)\lib.
-
 - Project must be compiled on x86 mode. (Release mode is preferred for performance)
 
-- If a standalone exe is needed, media folder and fmod.dll & fmod64.dll should be on same directory with exe file.
+- If a standalone exe is needed; media folder, source folder glsl files inside, fmod.dll & fmod64.dll should be on same directory with exe file.
 
 
 ## Features
