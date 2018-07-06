@@ -1,5 +1,7 @@
 # Space Ranger
 
+![Game Screenshot](https://image.ibb.co/nh1GUy/Screenshot_23.png)
+
 A space ship battle game developed with pure OpenGL on C++.
 
 
