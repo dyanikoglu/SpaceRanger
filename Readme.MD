@@ -3,131 +3,104 @@
 A space ship battle game developed with pure OpenGL on C++.
 
 
-## Contents
+## Environment Setup
 
-I. Environment Setup
+- Solution is created with Visual Studio 2017.
 
-II. Extra Features
+- It's assumed that OpenGL, FreeGLUT and Windows SDK 8.1 is already installed correctly on the system. This guide can be followed to get your dev. environment ready: http://www.cs.uky.edu/~cheng/cs633/OpenGLInstallGuideWindows.pdf
 
-III. Game Rules
+- You should add .dll path manually into VS environment. To do that, go to Project Properties -> Configuration Properties -> Debugging -> Environment and set it to PATH=%PATH%;$(ProjectDir)\lib.
 
-IV. Controls
+- Project must be compiled on x86 mode. (Release mode is preferred for performance)
 
-V. Bugs & Known Issues
-
-
-I. Environment Setup
----------------------
--> Just launch project by opening "HW3.vcxproj". Project should be builded on x86 - Release mode. (It's important
-that project should be launched on "Release", code should be optimized for getting optimal performance)
-
--> If it's needed to create a new project from scratch: fmod_vc.lib & fmod64_vc.lib libraries should be included in linker. Additionally; FMOD folder, media folder, fmod.dll, and fmod64.dll should be in project root directory.
-
--> If a standalone exe is needed: media folder, fmod.dll, and fmod64.dll should be on same directory with exe file.
+- If a standalone exe is needed, media folder and fmod.dll & fmod64.dll should be on same directory with exe file.
 
 
-II. Features
-------------------
+## Features
+
 This game includes other NPC ships, procedurally created spiral shaped universe, and a blaster shooting minigame as extra features. 
 
 
 NPC Ships: 
 
--> They're spawned randomly on universe, and will expire after sometime. Until a NPC ship expires, it will shoot its blaster randomly, and can hit player or other ships with this blaster. Since no AI is implemented, their shooting is fully random. Their movements are also random. 
+- They're spawned randomly on universe, and will expire after sometime. Until a NPC ship expires, it will shoot its blaster randomly, and can hit player or other ships with this blaster. Since no AI is implemented, their shooting is fully random. Their movements are also random. 
 
--> Ships can crash into planets, and destroy themselves by this way. Since NPC movements are fully random, they will mostly hit planets or the sun of universe on middle. (but it's still fun to play with them) 
+- Ships can crash into planets, and destroy themselves by this way. Since NPC movements are fully random, they will mostly hit planets or the sun of universe on middle. (but it's still fun to play with them) 
 
 
 Player Ships: 
 
--> Player has two different ships initially. They're fully independent. Player has a ability to shoot blaster to destroy other NPC ships( D key ). A explosion sound effect will play if player hits another ship with blaster. 
+- Player has two different ships initially. They're fully independent. Player has a ability to shoot blaster to destroy other NPC ships( D key ). A explosion sound effect will play if player hits another ship with blaster. 
 
--> If player crashes  inti another NPC ship, NPC blaster or a planet, the ship will be destroyed with a smooth animation. Player still can switch to other ship and keep playing if it's not destroyed. 
+- If player crashes  inti another NPC ship, NPC blaster or a planet, the ship will be destroyed with a smooth animation. Player still can switch to other ship and keep playing if it's not destroyed. 
 
--> Ships has lighting parameters for random various materials.
+- Ships has lighting parameters for random various materials.
 
--> Camera shake will occur as ship's linear velocity increases.
+- Camera shake will occur as ship's linear velocity increases.
 
 
 Surface Matrix: 
 
--> A 2d matrix-shaped surface can be seen in game world. This surface will refresh itself with new position of player if player comes close to bounds. So it will look like an infinite surface to player camera by this way. Also, this will improve performance drastically since we're not drawing whole surface at one time. 
+- A 2d matrix-shaped surface can be seen in game world. This surface will refresh itself with new position of player if player comes close to bounds. So it will look like an infinite surface to player camera by this way. Also, this will improve performance drastically since we're not drawing whole surface at one time. 
 
 
 Player Movement: 
 
--> All velocity transitions are smoothed with linear interpolation. So, stopping, rotating or speeding will be more smooth. 
+- All velocity transitions are smoothed with linear interpolation. So, stopping, rotating or speeding will be more smooth. 
 
 
 Universe Generation: 
--> Galaxy's planet places are generated with Euler's spiral formula. Some planets will have a ring, and will spawn with different colors / sizes. Additionally, some stars are placed on distant places to center. 
 
--> The only light source in scene is the sun on middle. This sphere's normals are inverted, so it's outer face will be lit instead of inner side ( light source is inside of the sphere) 
+- Galaxy's planet places are generated with Euler's spiral formula. Some planets will have a ring, and will spawn with different colors / sizes. Additionally, some stars are placed on distant places to center. 
 
--> Additionally, spheres are face culled. Their inner faces won't rendered.
+- The only light source in scene is the sun on middle. This sphere's normals are inverted, so it's outer face will be lit instead of inner side ( light source is inside of the sphere) 
+
+- Additionally, spheres are face culled. Their inner faces won't rendered.
+
 
 Sound Effects:
--> Sound effects are handled with FMOD.
 
--> Ship engine sound effect will increase with linear velocity of current ship.
+- Sound effects are handled with FMOD.
 
--> Explosion sound effects will play if player hits another ship with it's blaster
+- Ship engine sound effect will increase with linear velocity of current ship.
 
--> Other sound effects for ambience and blaster shooting
+- Explosion sound effects will play if player hits another ship with it's blaster
 
-III. Game Rules
--------------------
--> If player hits to a NPC blaster, player's ship is destroyed
-
--> If player hits to a planet or sun, player's ship is destroyed
-
--> If player hits another ship with its blaster, this ship is destroyed (player can destroy his/her second ship too)
-
--> If player and another ship crashes, both of them are destroyed.
-
--> Same rules are applicable for NPC ships.
+- Other sound effects for ambience and blaster shooting
 
 
-IV. Controls
-------------
-z -> Stop each movement of ship
+## Controls
 
-a -> Increase linear velocity (keeping pressed down will continuously increase it)
+- d -> Shoot laser
 
-s -> Decrease linear velocity (keeping pressed down will continuously decrease it)
+- z -> Stop each movement of ship
 
-l -> Increase rightwards angular velocity (keeping pressed down will continuously increase it)
+- a -> Increase linear velocity (keeping pressed down will continuously increase it)
 
-k -> Decrease rightwards velocity (keeping pressed down will continuously decrease it)
+- s -> Decrease linear velocity (keeping pressed down will continuously decrease it)
 
-b -> Swap player ships
+- l -> Increase rightwards angular velocity (keeping pressed down will continuously increase it)
 
-t -> Third Person View
+- k -> Decrease rightwards velocity (keeping pressed down will continuously decrease it)
 
-f -> First Person View
+- b -> Swap player ships
 
-w -> Top View
+- t -> Third Person View
 
-q -> Quit from game
+- f -> First Person View
 
-Left Mouse Button -> (If paused) Continue game / Pause Game
+- w -> Top View
 
-Right Mouse Button -> (If paused) Advance game by 1 frame / Pause Game
+- q -> Quit from game
 
+- Left Mouse Button -> (If paused) Continue game / Pause Game
 
-V. Bugs & Known Issues
------------------------
--> Hitting other ships with blaster is a bit hard due to sizes and speeds of NPC ships.
+- Right Mouse Button -> (If paused) Advance game by 1 frame / Pause Game
 
--> Controls are a bit weird because of instructions in homework paper, rotating the ship can be hard.
-
--> Rarely camera view can focus somewhere different than ship's destroyed parts when player's ship is destroyed
-
--> Top view shows the ships very small, because of the sizes of planets.
 
 ## Licence
 
-Copyright (C) 2017 Doğa Can YANIKOĞLU
+Copyright (C) 2017-2018 Doğa Can YANIKOĞLU
 
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 

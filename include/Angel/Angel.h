@@ -41,7 +41,7 @@
 //#  include <GL/freeglut_ext.h>
 #  include <GL/glew.h>
 #  include <GL/freeglut.h>
-#  include <GL/glext.h>
+//#  include <glext.h>
 #pragma comment(lib, "glew32.lib") 
 #endif  // __APPLE__
 
@@ -54,10 +54,6 @@
 //
 
 namespace Angel {
-
-//  Helper function to load vertex and fragment shader files
-GLuint InitShader( const char* vertexShaderFile,
-		   const char* fragmentShaderFile );
 
 //  Defined constant for when numbers are too small to be used in the
 //    denominator of a division operation.  This is only used if the
