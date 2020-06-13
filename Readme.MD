@@ -32,7 +32,7 @@ Player Ships:
 
 - Player has two different ships initially. They're fully independent. Player has a ability to shoot blaster to destroy other NPC ships( D key ). A explosion sound effect will play if player hits another ship with blaster. 
 
-- If player crashes  inti another NPC ship, NPC blaster or a planet, the ship will be destroyed with a smooth animation. Player still can switch to other ship and keep playing if it's not destroyed. 
+- If player crashes  into another NPC ship, NPC blaster or a planet, the ship will be destroyed with a smooth animation. Player still can switch to other ship and keep playing if it's not destroyed. 
 
 - Ships has lighting parameters for random various materials.
 
