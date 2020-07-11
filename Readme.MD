@@ -1,32 +1,16 @@
 # Space Ranger
-
-![Game Screenshot](https://image.ibb.co/nh1GUy/Screenshot_23.png)
+![gif](https://github.com/dyanikoglu/SpaceRanger/raw/master/Readme_GIF.gif)
 
 A space ship battle game developed with pure OpenGL on C++.
 
-
-## Environment Setup
-
-- Solution is created with Visual Studio 2017.
-
-- It's assumed that OpenGL, FreeGLUT and Windows SDK 8.1 is already installed correctly on the system. This guide can be followed to get your dev. environment ready: http://www.cs.uky.edu/~cheng/cs633/OpenGLInstallGuideWindows.pdf
-
-- Project must be compiled on x86 mode. (Release mode is preferred for performance)
-
-- If a standalone exe is needed; media folder, source folder glsl files inside, fmod.dll & fmod64.dll should be on same directory with exe file.
-
-
 ## Features
-
 This game includes other NPC ships, procedurally created spiral shaped universe, and a blaster shooting minigame as extra features. 
-
 
 NPC Ships: 
 
 - They're spawned randomly on universe, and will expire after sometime. Until a NPC ship expires, it will shoot its blaster randomly, and can hit player or other ships with this blaster. Since no AI is implemented, their shooting is fully random. Their movements are also random. 
 
 - Ships can crash into planets, and destroy themselves by this way. Since NPC movements are fully random, they will mostly hit planets or the sun of universe on middle. (but it's still fun to play with them) 
-
 
 Player Ships: 
 
@@ -43,11 +27,9 @@ Surface Matrix:
 
 - A 2d matrix-shaped surface can be seen in game world. This surface will refresh itself with new position of player if player comes close to bounds. So it will look like an infinite surface to player camera by this way. Also, this will improve performance drastically since we're not drawing whole surface at one time. 
 
-
 Player Movement: 
 
 - All velocity transitions are smoothed with linear interpolation. So, stopping, rotating or speeding will be more smooth. 
-
 
 Universe Generation: 
 
@@ -56,7 +38,6 @@ Universe Generation:
 - The only light source in scene is the sun on middle. This sphere's normals are inverted, so it's outer face will be lit instead of inner side ( light source is inside of the sphere) 
 
 - Additionally, spheres are face culled. Their inner faces won't rendered.
-
 
 Sound Effects:
 
@@ -68,9 +49,16 @@ Sound Effects:
 
 - Other sound effects for ambience and blaster shooting
 
+## Environment Setup
+- Solution is created with Visual Studio 2017.
+
+- It's assumed that OpenGL, FreeGLUT and Windows SDK 8.1 is already installed correctly on the system. This guide can be followed to get your dev. environment ready: http://www.cs.uky.edu/~cheng/cs633/OpenGLInstallGuideWindows.pdf
+
+- Project must be compiled on x86 mode. (Release mode is preferred for performance)
+
+- If a standalone exe is needed; media folder, source folder glsl files inside, fmod.dll & fmod64.dll should be on same directory with exe file.
 
 ## Controls
-
 - d -> Shoot laser
 
 - z -> Stop each movement of ship
@@ -97,9 +85,7 @@ Sound Effects:
 
 - Right Mouse Button -> (If paused) Advance game by 1 frame / Pause Game
 
-
 ## Licence
-
 Copyright (C) 2017-2018 Doğa Can YANIKOĞLU
 
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
@@ -109,5 +95,4 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 You should have received a copy of the GNU General Public License along with this program. If not, see http://www.gnu.org/licenses/
 
 ## Contributing
-
 Contributors are encouraged to fork this repository and issue pull requests.
