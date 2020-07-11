@@ -11,7 +11,7 @@ Camera::Camera() {
 	this->position = vec4(0, 0, 0, 1);
 	this->up = vec4(0, 0, 1, 0);
 	this->view = LookAt(position, focal, up);
-	this->currMode = VIEW_MODE::FP;
+	this->currMode = VIEW_MODE::TP;
 }
 
 void Camera::attach(SpaceShip* player) {
