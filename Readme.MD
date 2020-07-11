@@ -1,7 +1,7 @@
 # Space Ranger
 ![gif](https://github.com/dyanikoglu/SpaceRanger/raw/master/Readme_GIF.gif)
 
-A space ship battle game developed with pure OpenGL on C++.
+A space ship battle game developed with OpenGL on C++.
 
 ## Features
 This game includes other NPC ships, procedurally created spiral shaped universe, and a blaster shooting minigame as extra features. 
